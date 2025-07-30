@@ -1,0 +1,28 @@
+name: Deploy to Azure Blob Static Website
+
+on:
+  push:
+    branches: [main] # Change to your branch if needed
+
+jobs:
+  upload-to-blob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Upload to Azure Blob Storage
+        uses: azure/CLI@v2
+
+        with:
+          inlineScript: |
+            # Log in to Azure using the provided credentials
+            az storage blob upload-batch \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+              --destination \$web \
+              --source . \
+              --overwrite
+
+        env:
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
+          AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_STORAGE_ACCOUNT }}

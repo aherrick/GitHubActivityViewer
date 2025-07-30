@@ -75,10 +75,8 @@
           if (!discResp.ok) continue;
           let discussions = await discResp.json();
           for (let d of discussions) {
-            // Check if user is author or has commented
             let involved = (d.user && d.user.login && d.user.login.toLowerCase() === username.toLowerCase());
             if (!involved) {
-              // Build the correct comments URL for discussions
               let cmtUrl = `https://api.github.com/repos/${repo}/discussions/${d.number}/comments?per_page=30`;
               let cmtResp = await fetch(cmtUrl);
               if (!cmtResp.ok) continue;
@@ -113,7 +111,28 @@
       table.style.display = '';
       document.getElementById('message').textContent = `Showing ${items.length} items.`;
     }
+
+    // On page load: If user or repos in query, fill and auto-submit the form
+    window.addEventListener('DOMContentLoaded', () => {
+      let params = new URLSearchParams(window.location.search);
+      let user = params.get('user');
+      let repos = params.get('repos');
+      let foundParams = false;
+      if (user) {
+        document.getElementById('userInput').value = user;
+        foundParams = true;
+      }
+      if (repos) {
+        document.getElementById('repoInput').value = repos;
+        foundParams = true;
+      }
+      if (foundParams) {
+        // Simulate form submit
+        loadActivity();
+      }
+    });
   </script>
+
 </body>
 
 </html>
