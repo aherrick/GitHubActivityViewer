@@ -1,5 +1,7 @@
 # GitHub Activity Viewer
 
+[![Deployment Status](https://github.com/aherrick/GitHubActivityViewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/aherrick/GitHubActivityViewer/actions/workflows/deploy.yml)
+
 This is a simple tool I built because there wasn’t an easy way on GitHub to see, in one place, all the issues, PRs, and discussions where I’ve been active—sorted by most recent activity.
 
 With this page, you can quickly see your (or any user’s) last activity across issues, PRs, and (per-repo) discussions you participated in.
