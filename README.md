@@ -45,13 +45,13 @@ https://githubajh.z19.web.core.windows.net/?user=YOUR_GITHUB_USERNAME&repos=owne
 **Examples:**
 
 * Just username:
-  `https://githubajh.z19.web.core.windows.net/?user=aherrick`
+  [https://githubajh.z19.web.core.windows.net/?user=aherrick](https://githubajh.z19.web.core.windows.net/?user=aherrick)
 
 * Username and one repo:
-  `https://githubajh.z19.web.core.windows.net/?user=aherrick&repos=microsoft/azure-devops-mcp`
+  [https://githubajh.z19.web.core.windows.net/?user=aherrick\&repos=microsoft/azure-devops-mcp](https://githubajh.z19.web.core.windows.net/?user=aherrick&repos=microsoft/azure-devops-mcp)
 
 * Username and multiple repos:
-  `https://githubajh.z19.web.core.windows.net/?user=aherrick&repos=dotnet/runtime,microsoft/semantic-kernel`
+  [https://githubajh.z19.web.core.windows.net/?user=aherrick\&repos=dotnet/runtime,microsoft/semantic-kernel](https://githubajh.z19.web.core.windows.net/?user=aherrick&repos=dotnet/runtime,microsoft/semantic-kernel)
 
 Open the link in your browser and the form will auto-fill and auto-run.
 
